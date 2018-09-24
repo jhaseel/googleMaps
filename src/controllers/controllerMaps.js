@@ -67,4 +67,23 @@ controller.coordenadas = (req, res, next) => {
   });
 };
 
+controller.coordenadas_todo = (req, res, next) => {
+  req.getConnection((err, conn) => {
+    console.log(req.query);
+    var municipio = req.query.municipio;
+    var localidad = req.query.localidad;
+    conn.query('call coordenadas_todo(?,?)',[municipio,localidad], (err, row, fields) => {
+      if (err){
+        res.json(err); 
+        return next(err);
+      }else{
+        console.log(row[0]);
+        res.send(row[0]);
+      }
+
+    })
+  });
+};
+
+
 module.exports = controller;
