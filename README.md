@@ -6,9 +6,6 @@
 ````sh
 npm intall
 ````
-
-## las librerias ocupadas son :
-
 * express
 * express-myconnection
 * morgan
