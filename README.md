@@ -4,7 +4,7 @@
 </p>
 
 ````sh
-npm intall
+npm install
 ````
 * express
 * express-myconnection
